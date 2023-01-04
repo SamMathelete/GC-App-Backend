@@ -3,7 +3,6 @@ const Team = require("../models/team");
 
 rankingsRouter.get("/", async (req, res) => {
   const teams = await Team.find({});
-  const objTeams = teams.map((obj) => obj.toObject());
   const sortedTeams = teams
     .map((obj) => obj.toObject())
     .sort((a, b) => b.score - a.score);

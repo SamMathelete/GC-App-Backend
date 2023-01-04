@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const config = require("./utils/config");
 const rankingsRouter = require("./controllers/rankings");
+const scheduleRouter = require("./controllers/schedule");
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/rankings", rankingsRouter);
+app.use("/api/schedule", scheduleRouter);
 
 module.exports = app;
